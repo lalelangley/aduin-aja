@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.navbar {
+  width: 100vw; /* full layar */
+  background: #06174B;
+  position: fixed; /* kalau mau navbar selalu di atas */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar .container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: #00CCFF;
+}
+
+.nav-link.active {
+  color: #00CCFF;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #00CCFF;
+  bottom: -5px;
+  left: 0;
+}
+
+
+
+.hero-image {
+  position: absolute;
+  width: 1440px;
+  height: 250px;
+  top: 50px;
+  left: 0;
+  z-index: -1;
+}
+
+.section-title {
+  position: absolute;
+  top: 120px;
+  left: 285px;
+  width: auto;
+  font-size: 32px;
+  font-weight: bold;
+  color: #00CCFF;
+  z-index: 2;
+}
+
+.content h2 {
+  color: #06174B;
+}
+
+.headline {
+  margin: 50px auto 0;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+  color: #ffffff;
+  margin-left: 200px;
+  margin-top: 30px;
+}
+
+.content {
+  max-width: 700px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin-top: 150px;
+  margin-left: 235px;
+}
+
+.content h2 {
+  color: #06174B;
+  margin-bottom: 4px;
+}
+
+/* Paragraf default (jika tanpa class) */
+.content p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Paragraf isi poin menjorok */
+.isi-poin {
+  padding-left: 27px;
+}
+
+/* Paragraf pembuka dan penutup tetap rata kiri */
+.pembuka,
+.penutup {
+  padding-left: 0;
+}
+
+.footer {
+  background: #06174B;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 12px;
+  color: white;
+  margin-top: 30px;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  gap: 300px;
+}
+
+.footer a {
+  color: rgb(244, 244, 244);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer a:active {
+  color: #00CCFF;
+}
+
+.footer-section {
+  max-width: 220px;
+  text-align: left;
+}
+
+.footer h3 {
+  font-size: 20px;
+  font-weight: 750;
+  margin-bottom: 6px;
+}
+
+.footer p {
+  font-size: 14px;
+  margin-top: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.copyright {
+  background: #07102E;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 35%;
+  color: white;
+  font-size: 14px;
+}

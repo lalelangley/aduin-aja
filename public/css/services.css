@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.bg-image {
+  position: absolute;
+  width: 1500px;
+  height: 600px;
+  top: -35px;
+  left: -102px;
+  z-index: -1;
+}
+
+.navbar {
+  width: 100vw; /* full layar */
+  background: #06174B;
+  position: fixed; /* kalau mau navbar selalu di atas */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navbar .container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: #00CCFF;
+}
+
+.nav-link.active {
+  color: #00CCFF;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #00CCFF;
+  bottom: -5px;
+  left: 0;
+}
+
+.hero-image {
+  position: absolute;
+  width: 1440px;
+  height: 250px;
+  top: 50px;
+  left: 0;
+  z-index: -1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-right: 200px;
+  color: #00CCFF;
+}
+
+.headline {
+  margin: 50px auto 0;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 800px; /* Membatasi lebar teks */
+  padding: 0 20px;   /* Jaga jarak dari tepi */
+  color: #ffffff;
+  margin-left: 200px;
+  margin-top: 30px;
+
+}
+
+.services-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-right: 180px;
+  margin-top: 30px;
+}
+
+.service-card {
+  flex: 0 1 calc(33.33% - 40px); /* 3 kolom */
+  max-width: 280px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img.icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c2c51;
+  margin-bottom: 10px;
+}
+
+.service-desc {
+  font-size: 14px;
+  color: #4e4e5d;
+  line-height: 1.6;
+}
+
+.footer {
+  background: #06174B;
+  display: flex;
+  justify-content: flex-start; /* Biar kolom tidak menyebar jauh */
+  align-items: flex-start;
+  height: auto;
+  font-size: 12px;
+  color: white;
+  margin-top: 30px;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  gap: 300px; /* Jarak antar kolom, bisa dikurangi kalau masih kejauhan */
+}
+
+.footer a {
+  color: rgb(244, 244, 244); /* Warna default seperti navbar */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer a:active {
+  color: #00CCFF; /* Warna saat hover atau diklik */
+}
+
+.footer-section {
+  max-width: 220px;
+  text-align: left;
+}
+
+.footer h3 {
+  font-size: 20px;
+  font-weight: 750;
+  margin-bottom: 6px;
+}
+
+.footer p {
+  font-size: 14px;
+  margin-top: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.social-icons img {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+.copyright {
+  background: #07102E;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;     /* teks ke arah kiri */
+  align-items: center;
+  padding: 0 20px;
+  padding-left: 35%;               /* ini yang mengatur supaya agak ke tengah */
+  color: white;
+  font-size: 14px;
+}
