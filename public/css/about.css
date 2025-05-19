@@ -83,20 +83,20 @@ body {
   left: 0;
 }
 
-
-
 .section {
   display: flex;
   padding: 50px;
   align-items: center;
   gap: 10px;
+  margin-top: 10px;
+  margin-left: 90px;
 }
 
 /* Buat gambar lebih proporsional dan bulat sudut */
 .section-apa img,
 .section-mengapa img {
   border-radius: 20px;
-  margin-top: 10px;
+  margin-top: 40px;
   max-width: 100%;
   height: auto;
 }
@@ -105,13 +105,14 @@ body {
 .section-apa .img-left {
   width: 400px;
   height: auto;
-  margin-left: 20px; /* geser ke kanan */
+  margin-left: 0px; /* geser ke kanan */
 }
 
 /* Ukuran gambar section-mengapa */
 .section-mengapa .img-right {
   width: 400px;
   height: auto;
+  margin-right: 30px; /* geser ke kiri */
 }
 
 /* Ukuran teks dikurangi */
@@ -130,8 +131,9 @@ body {
 
 /* Naikin section-mengapa sedikit */
 .section-mengapa {
-  margin-top: -50px;
+  margin-top: -30px;
   gap: 100px; 
+  margin-right: -50px; 
 }
 
 /* Jarak antar elemen pada section-apa */
@@ -144,7 +146,8 @@ body {
   justify-content: center;     /* Posisikan kotak di tengah */
   gap: 50px;                   /* Jarak antar kotak */
   padding: 50px;
-  margin-left: -180px;         /* Geser seluruh section ke kiri */
+  margin-left: -40px;         /* Geser seluruh section ke kiri */
+  margin-top: -50px;
 }
 
 .visi, .misi {
