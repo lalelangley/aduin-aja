@@ -32,7 +32,8 @@
     <section class="contact-box">
       <div class="info-section">
         <h2>Contact Information</h2>
-        <p>Kami siap membantu! Jika Anda memiliki pertanyaan, saran, atau ingin bekerja sama, jangan ragu untuk menghubungi kami melalui informasi di bawah ini.</p>
+        <p>Kami siap membantu! Jika Anda memiliki pertanyaan, saran, atau ingin bekerja sama, 
+          jangan ragu untuk menghubungi kami melalui informasi di bawah ini.</p>
 
         <div class="info-item">
           <img src="image/call.png" alt="Phone Icon" />

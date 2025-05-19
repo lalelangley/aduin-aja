@@ -7,12 +7,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Container */
 .container {
-  max-width: 1440px;
+  position: relative;
+  width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
 }
 
 /* Hero Section */
@@ -69,7 +67,7 @@ body {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  margin-right: -10px;
+
 }
 
 .navbar .container {

@@ -10,16 +10,18 @@
 </head>
 <body>
   <div class="container">
-<div class="navbar">
-  <img class="logo" src="image/logo1.png" alt="Logo" />
-  <nav class="nav-links">
-   <a href="{{ url('/') }}" class="nav-link">HOME</a>
-    <a href="{{ url('/about') }}" class="nav-link">ABOUT US</a>
-    <a href="{{ url('/services') }}" class="nav-link">SERVICES</a>
-    <a href="{{ url('/blog') }}" class="nav-link active">BLOG</a>
-    <a href="{{ url('/contact') }}" class="nav-link">CONTACT</a>
+ <nav class="navbar">
+    <div class="container">
+      <img class="logo" src="{{ asset('image/logo1.png') }}" alt="Logo" />
+      <nav class="nav-links">
+        <a href="{{ url('/') }}" class="nav-link ">HOME</a>
+        <a href="{{ url('/about') }}" class="nav-link">ABOUT US</a>
+        <a href="{{ url('/services') }}" class="nav-link">SERVICES</a>
+        <a href="{{ url('/blog') }}" class="nav-link  active">BLOG</a>
+        <a href="{{ url('/contact') }}" class="nav-link">CONTACT</a>
+      </nav>
+    </div>
   </nav>
-</div>
 
     <div class="hero-container">
       <img class="hero-image" src="image/bg2.png" />
@@ -49,9 +51,6 @@
 
   <p class="penutup">Dengan menyampaikan pengaduan secara jelas, sopan, dan lengkap, Anda turut berperan aktif dalam menciptakan pelayanan publik yang lebih baik dan lingkungan yang lebih tertib. Suara Anda sangat berarti — mari gunakan dengan bijak untuk perubahan yang positif.</p>
 </div>
-
-
-
 <footer class="footer">
       <div class="footer-section">
         <h3>Aduin Aja</h3>
@@ -67,7 +66,6 @@
     <a href="{{ url('/contact') }}" class="nav-link">CONTACT</a>
         </p>
       </div>
-
       <div class="footer-section">
         <h3>Sosials</h3>
         <div class="social-icons">
