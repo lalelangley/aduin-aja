@@ -83,18 +83,16 @@ body {
   left: 0;
 }
 
-
-
 .contact-heading {
   text-align: center;
-  margin-top: 50px;
 }
 
 .contact-heading h1 {
   font-size: 30px;
   font-weight: 800;
   color: black;
-  margin-left: -150px;
+  margin-top: 100px;
+  text-align: center;
 }
 
 .contact-heading p {
@@ -102,8 +100,8 @@ body {
   font-weight: 500;
   color: black;
   max-width: 800px;
-  margin: 20px auto;
-  margin-right: 395px;
+  margin: 20px auto; /* auto = center */
+  text-align: center;
 }
 
 .contact-box {
@@ -111,9 +109,10 @@ body {
   justify-content: space-between;
   background: #06174B;
   border-radius: 30px;
-  margin: 30px 0 30px 10%; /* atas kanan bawah kiri */
+  margin: 30px auto;
   padding: 25px;
-  width: 65%;
+  width: 80%; /* atau 70% untuk lebih sempit */
+  max-width: 1000px;
   color: white;
   gap: 20px;
 }
@@ -177,73 +176,79 @@ button {
   width: 140px;
 }
 
+/* Footer Styles */
 .footer {
-  background: #06174B;
-  display: flex;
-  justify-content: flex-start; /* Biar kolom tidak menyebar jauh */
-  align-items: flex-start;
-  height: auto;
-  font-size: 12px;
+  background-color: #06174B;
   color: white;
-  margin-top: 30px;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 300px; /* Jarak antar kolom, bisa dikurangi kalau masih kejauhan */
-}
-
-.footer a {
-  color: rgb(244, 244, 244); /* Warna default seperti navbar */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover,
-.footer a:active {
-  color: #00CCFF; /* Warna saat hover atau diklik */
+  padding: 40px 80px;
+  gap: 40px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin-left: -20px; /* Biar rata tengah */
 }
 
 .footer-section {
-  max-width: 220px;
-  text-align: left;
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
 }
 
-.footer h3 {
+.footer-section h3 {
   font-size: 20px;
-  font-weight: 750;
-  margin-bottom: 6px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-.footer p {
+.footer-section p {
   font-size: 14px;
-  margin-top: 0;
-  line-height: 1.4;
-  text-align: left;
+  line-height: 1.6;
+  margin: 0;
+  color: #ddd;
 }
 
+.footer-section a {
+  color: #f4f4f4;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+  font-size: 13px;
+}
+
+.footer-section a:hover {
+  color: #00ccff;
+}
+
+/* Social Media Icons */
 .social-icons {
   display: flex;
-  gap: 10px;
-  margin-top: 8px;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .social-icons img {
-  width: 22px;
-  height: 22px;
-  transition: transform 0.2s ease;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .social-icons img:hover {
   transform: scale(1.1);
 }
 
+/* Copyright */
 .copyright {
-  background: #07102E;
-  height: 50px;
-  display: flex;
-  justify-content: flex-start;     /* teks ke arah kiri */
-  align-items: center;
-  padding: 0 20px;
-  padding-left: 35%;               /* ini yang mengatur supaya agak ke tengah */
+  background-color: #07102E;
   color: white;
+  text-align: center;
+  padding: 15px 20px;
   font-size: 14px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin-left: -20px; /* Biar rata tengah */
 }

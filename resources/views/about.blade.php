@@ -22,7 +22,7 @@
     </div>
   </nav>
 
-    <div class="section section-apa">
+    <div class="section-apa">
       <img class="img-left" src="image/apaitu.png" alt="Apa Itu" />
       <div class="text-right">
         <h2>Apa itu Aduin Aja?</h2>
@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <div class="section section-mengapa">
+    <div class="section-mengapa">
       <div class="text-left">
         <h2>Mengapa harus Aduin Aja?</h2>
         <p><strong>Aduin Aja</strong> adalah solusi inovatif untuk pengaduan masyarakat yang cepat, transparan, dan akuntabel. Dengan sistem real-time yang mudah digunakan, setiap laporan mendapat tindak lanjut yang tepat. Keamanan data terjamin, memastikan kerahasiaan pengaduan. <strong>Aduin Aja</strong> memberi kekuatan bagi setiap suara untuk mendorong perubahan nyata dan menciptakan lingkungan yang lebih baik.</p>

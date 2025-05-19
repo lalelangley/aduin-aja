@@ -36,7 +36,7 @@
     </div>
   </section>
 
-  <div class="container">
+  <div class="container-komitmen">
     <h2 class="judul-komitmen">Komitmen Kami untuk Layanan Terbaik</h2>
     <p class="sub-komitmen">
       Bukan sekadar menerima laporan. Kami bekerja untuk memastikan setiap suara masyarakat ditangani secara tuntas, adil, dan profesional.
