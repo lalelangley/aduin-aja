@@ -51,38 +51,41 @@
 
   <p class="penutup">Dengan menyampaikan pengaduan secara jelas, sopan, dan lengkap, Anda turut berperan aktif dalam menciptakan pelayanan publik yang lebih baik dan lingkungan yang lebih tertib. Suara Anda sangat berarti — mari gunakan dengan bijak untuk perubahan yang positif.</p>
 </div>
-<footer class="footer">
-      <div class="footer-section">
-        <h3>Aduin Aja</h3>
-        <p>Butuh solusi pengaduan yang sesuai kebutuhan atau laporan langsung ke instansi? Kami siap membantu Anda.</p>
+ <footer class="footer">
+  <div class="container">
+    <div class="footer-section">
+      <h3>Aduin Aja</h3>
+      <p>Butuh solusi pengaduan yang sesuai kebutuhan atau laporan langsung ke instansi? Kami siap membantu Anda.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <p>
+        <a href="{{ url('/') }}" class="nav-link">HOME</a>
+        <a href="{{ url('/about') }}" class="nav-link">ABOUT US</a>
+        <a href="{{ url('/services') }}" class="nav-link">SERVICES</a>
+        <a href="{{ url('/blog') }}" class="nav-link">BLOG</a>
+        <a href="{{ url('/contact') }}" class="nav-link">CONTACT</a>
+      </p>
+    </div>
+    <div class="footer-section">
+      <h3>Sosials</h3>
+      <div class="social-icons">
+        <a href="https://instagram.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram">
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter">
+        </a>
       </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <p>
-   <a href="{{ url('/') }}" class="nav-link">HOME</a>
-    <a href="{{ url('/about') }}" class="nav-link">ABOUT US</a>
-    <a href="{{ url('/services') }}" class="nav-link">SERVICES</a>
-    <a href="{{ url('/blog') }}" class="nav-link">BLOG</a>
-    <a href="{{ url('/contact') }}" class="nav-link">CONTACT</a>
-        </p>
-      </div>
-      <div class="footer-section">
-        <h3>Sosials</h3>
-        <div class="social-icons">
-          <a href="https://instagram.com" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram">
-          </a>
-          <a href="https://facebook.com" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook">
-          </a>
-          <a href="https://twitter.com" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter">
-          </a>
-        </div>
-      </div>
-    </footer>
-    <div class="copyright">
-      © 2025 Aduin Aja. All rights reserved.
-    </div>    
+    </div>
+  </div>
+</footer>
+<div class="copyright">
+  © 2025 Aduin Aja. All rights reserved.
+</div>
+
 </body>
 </html>
