@@ -12,10 +12,10 @@
     <div class="container">
       <img class="logo" src="{{ asset('image/logo1.png') }}" alt="Logo" />
       <nav class="nav-links">
-        <a href="{{ url('/') }}" class="nav-link">HOME</a>
+        <a href="{{ url('/') }}" class="nav-link ">HOME</a>
         <a href="{{ url('/about') }}" class="nav-link">ABOUT US</a>
         <a href="{{ url('/services') }}" class="nav-link">SERVICES</a>
-        <a href="{{ url('/blog') }}" class="nav-link active">BLOG</a>
+        <a href="{{ url('/blog') }}" class="nav-link  active">BLOG</a>
         <a href="{{ url('/contact') }}" class="nav-link">CONTACT</a>
       </nav>
     </div>
@@ -35,8 +35,8 @@
     </div>
     <h2>Cara Menyampaikan Pengaduan yang Efektif dan Tepat Sasaran</h2>
     <p>
-      Tips dan langkah praktis agar pengaduan Anda lebih mudah ditindaklanjuti oleh pihak berwenang, mulai dari menyusun laporan secara jelas dan lengkap, memilih kategori pengaduan yang tepat, hingga menyertakan bukti atau dokumentasi yang mendukung.    </p>
-    <a href="blog1.html">Read More >>></a>
+      Tips dan langkah praktis agar pengaduan Anda lebih mudah ditindaklanjuti oleh pihak berwenang, mulai dari menyusun laporan secara jelas dan lengkap, memilih kategori pengaduan yang tepat, hingga menyertakan bukti atau dokumentasi yang mendukung.</p>
+    <a href="{{ url('/blog1') }}" class="nav-link">Read More >>></a>
   </div>
 
   <div class="card">
@@ -47,7 +47,7 @@
     <p>
       Edukasi tentang berbagai kategori pengaduan yang umum disampaikan masyarakat, seperti masalah keamanan, kerusakan infrastruktur, pencemaran lingkungan, hingga keluhan terhadap layanan publik, agar masyarakat lebih tepat dalam menyampaikan laporan sesuai konteksnya.
     </p>
-    <a href="blog2.html">Read More >>></a>
+    <a href="{{ url('/blog2') }}" class="nav-link">Read More >>></a>
   </div>
 
   <div class="card">
@@ -58,7 +58,7 @@
     <p>
       Menjelaskan pentingnya peran aktif warga dalam mengawasi, menilai, dan memberikan masukan terhadap pelayanan publik, sebagai bentuk partisipasi untuk menciptakan pemerintahan yang lebih transparan, adil, dan responsif terhadap kebutuhan masyarakat.kan pentingnya peran warga dalam mengawasi dan memperbaiki pelayanan publik.
     </p>
-    <a href="blog3.html">Read More >>></a>
+    <a href="{{ url('/blog3') }}" class="nav-link">Read More >>></a>
   </div>
 
   <div class="card">
@@ -69,7 +69,7 @@
     <p>
       Panduan bagi masyarakat untuk menyampaikan pengaduan dengan sikap sopan, bahasa yang jelas, serta isi yang objektif, agar laporan lebih dihargai oleh pihak berwenang dan memiliki peluang lebih besar untuk ditindaklanjuti secara serius.
     </p>
-    <a href="blog4.html">Read More >>></a>
+    <a href="{{ url('/blog4') }}" class="nav-link">Read More >>></a>
   </div>
 
   <div class="card">
@@ -80,7 +80,7 @@
     <p>
       Uraian mengenai proses penanganan pengaduan, mulai dari saat laporan diterima oleh sistem, diverifikasi oleh petugas, diteruskan ke instansi terkait, hingga pengaduan tersebut ditindaklanjuti dan diberikan umpan balik kepada pelapor.
     </p>
-    <a href="blog5.html">Read More >>></a>
+    <a href="{{ url('/blog5') }}" class="nav-link">Read More >>></a>
   </div>
 
   <div class="card">
@@ -91,11 +91,11 @@
     <p>
       Panduan bagi masyarakat untuk memantau perkembangan laporan yang telah dikirim, termasuk cara mengecek status pengaduan melalui platform, serta penjelasan arti dari setiap status seperti “belum diproses”, “sedang diproses”, atau “selesai”, agar pelapor memahami sejauh mana penanganan telah dilakukan.
     </p>
-    <a href="blog6.html">Read More >>></a>
+    <a href="{{ url('/blog6') }}" class="nav-link">Read More >>></a>
   </div>
 </section>
 
-    <footer class="footer">
+ <footer class="footer">
       <div class="footer-section">
         <h3>Aduin Aja</h3>
         <p>Butuh solusi pengaduan yang sesuai kebutuhan atau laporan langsung ke instansi? Kami siap membantu Anda.</p>
@@ -110,7 +110,6 @@
     <a href="{{ url('/contact') }}" class="nav-link">CONTACT</a>
         </p>
       </div>
-
       <div class="footer-section">
         <h3>Sosials</h3>
         <div class="social-icons">
@@ -128,6 +127,6 @@
     </footer>
     <div class="copyright">
       © 2025 Aduin Aja. All rights reserved.
-    </div>    
+    </div>
 </body>
 </html>
