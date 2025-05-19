@@ -14,7 +14,10 @@ use App\Http\Controllers\LikePengaduanController;
 use App\Http\Controllers\KomentarPengaduanController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LogTestController;
-use App\Http\Controllers\FeedbackController;
+
+Route::get('/masyarakat/dashboard', [PengaduanController::class, 'dashboard'])
+    ->name('masyarakat.dashboard')
+    ->middleware('auth:masyarakat');
 
 // Halaman utama
 Route::get('/', function () {

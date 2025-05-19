@@ -44,7 +44,7 @@
         <select x-model="bulan" @change="updateFilters" class="border p-2 rounded text-sm">
             <option value="">Semua Bulan</option>
             @for ($i = 1; $i <= 12; $i++)
-                <option value="{{ $i }}" :selected="bulan == {{ $i }}">
+                <option value="{{ $i }}" :selected="bulan == "{{ $i }} ">
                     {{ DateTime::createFromFormat('!m', $i)->format('F') }}
                 </option>
             @endfor
