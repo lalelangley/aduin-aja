@@ -1,0 +1,134 @@
+/* Reset & Body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Sidebar fixed */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 525px;
+  width: 175px;
+  background-color: #06174B;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  box-shadow: 1px 0 5px rgba(0,0,0,0.1);
+  z-index: 200;
+}
+
+/* Logo Sidebar */
+.logo {
+  width: 170px;
+  margin-bottom: 25px;
+}
+
+/* Menu Sidebar */
+.menu {
+  flex-grow: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+  color: white; /* default warna teks */
+}
+
+.menu-item img.icon {
+  width: 20px;
+  margin-right: 12px;
+  filter: brightness(0) invert(1); /* default: putih */
+  transition: filter 0.3s;
+}
+
+/* Ukuran khusus untuk ikon daftar */
+.menu-item.daftar-laporan img.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-item span {
+  font-size: 15px;
+}
+
+/* Efek saat hover / active */
+.menu-item:hover,
+.menu-item.active {
+  background-color: #00CCFF;
+  color: #000000; /* teks jadi biru */
+}
+
+.menu-item:hover img.icon,
+.menu-item.active img.icon {
+  filter: none; /* icon pakai warna asli (biru misalnya) */
+}
+
+/* Menu keluar */
+.menu-item.keluar {
+  margin-top: 50px;
+  width: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item.keluar:hover,
+.menu-item.keluar.active {
+  background-color: #00CCFF;
+  color: #000000;
+}
+
+.menu-item.keluar:hover img.icon,
+.menu-item.keluar.active img.icon {
+  filter: none;
+}
+
+/* Navbar fixed */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 205px; /* geser sesuai lebar sidebar */
+  right: 0;
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 300;
+}
+
+/* Search box */
+.search-box {
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* Foto Profil */
+.profile-pic {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
