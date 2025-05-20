@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -55,7 +56,7 @@ class ProfileController extends Controller
         $user->pekerjaan = $request->pekerjaan;
         $user->tempat_tinggal = $request->tempat_tinggal;
         $user->save();
-
+        Auth::guard('masyarakat')->setUser($user->fresh());
         return redirect()->route('profile.index')->with('success', 'Profil berhasil diperbarui!');
     }
 

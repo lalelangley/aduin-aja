@@ -6,7 +6,7 @@
 <div class="container mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
     <div class="flex justify-between items-center">
         <h1 class="text-3xl font-bold text-gray-800">Dashboard Masyarakat</h1>
-        
+
         <!-- Tombol Profile -->
         <a href="{{ route('profile.index') }}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition">
             👤 Profile
@@ -53,16 +53,24 @@
     </div>
 </div>
 
+<!-- Grafik Pengaduan Status -->
 <div class="mt-10 bg-white p-6 rounded shadow">
     <h2 class="text-2xl font-semibold text-gray-800 mb-4">Grafik Pengaduan</h2>
     <canvas id="pengaduanChart" height="120"></canvas>
 </div>
 
+<!-- Grafik Pengaduan Berdasarkan Divisi -->
+<div class="mt-10 bg-white p-6 rounded shadow">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Grafik Pengaduan Berdasarkan Divisi</h2>
+    <canvas id="divisiChart" height="120"></canvas>
+</div>
 
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    const ctx = document.getElementById('pengaduanChart').getContext('2d');
-    new Chart(ctx, {
+    // Grafik Status Pengaduan
+    const pengaduanCtx = document.getElementById('pengaduanChart').getContext('2d');
+    new Chart(pengaduanCtx, {
         type: 'bar',
         data: {
             labels: ['Pending', 'Proses', 'Selesai'],
@@ -70,9 +78,9 @@
                 label: 'Jumlah Pengaduan',
                 data: [{{ $pending }}, {{ $proses }}, {{ $selesai }}],
                 backgroundColor: [
-                    'rgba(253, 224, 71, 0.7)', // kuning
-                    'rgba(251, 146, 60, 0.7)', // oranye
-                    'rgba(34, 197, 94, 0.7)'   // hijau
+                    'rgba(253, 224, 71, 0.7)',
+                    'rgba(251, 146, 60, 0.7)',
+                    'rgba(34, 197, 94, 0.7)'
                 ],
                 borderColor: [
                     'rgba(202, 138, 4, 1)',
@@ -94,6 +102,37 @@
             }
         }
     });
-</script>
 
+    // Grafik Pengaduan Berdasarkan Divisi
+    const divisiCtx = document.getElementById('divisiChart').getContext('2d');
+    new Chart(divisiCtx, {
+        type: 'bar',
+        data: {
+            labels: @json($labels),
+            datasets: [{
+                label: 'Jumlah Pengaduan',
+                data: @json($values),
+                backgroundColor: ['#FF6384', '#FFCE56', '#36A2EB'],
+                borderColor: '#ccc',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Jumlah Pengaduan Hasil Klasifikasi ML per Divisi'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { precision: 0 }
+                }
+            }
+        }
+    });
+</script>
+</script>
 @endsection
