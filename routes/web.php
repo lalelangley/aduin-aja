@@ -110,6 +110,10 @@ Route::middleware('auth:petugas')->group(function () {
         return view('petugas.dashboard');
     })->name('petugas.dashboard');
 
+    Route::get('petugas/daftarlaporan', function () {
+    return view('petugas.daftarlaporan');
+});
+
     // Dashboard Admin (pakai controller supaya $petugas bisa dikirim)
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
