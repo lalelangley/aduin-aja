@@ -26,7 +26,6 @@ body {
 
 /* navbar tetap seperti sebelumnya */
 
-
 .hero-section::before {
   content: "";
   position: absolute;
