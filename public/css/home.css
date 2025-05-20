@@ -7,12 +7,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Container */
 .container {
-  max-width: 1440px;
+  position: relative;
+  width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
 }
 
 /* Hero Section */
@@ -69,6 +67,7 @@ body {
   display: flex;
   align-items: center;
   box-sizing: border-box;
+
 }
 
 .navbar .container {
@@ -120,7 +119,6 @@ body {
   bottom: -5px;
   left: 0;
 }
-
 
 /* Judul & Subjudul */
 .judul {
@@ -188,7 +186,7 @@ body {
   text-align: center;
   color: #1A1883;
   font-weight: 700;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .sub-komitmen {
@@ -202,11 +200,11 @@ body {
 
 /* Card */
 .card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex ;
   justify-content: center;
   gap: 50px;
-  margin-top: 30px;
+  margin-bottom: 30px;
+
 }
 
 .card {
@@ -294,21 +292,6 @@ body {
   filter: brightness(0.7) invert(1);
 }
 
-/* Copyright */
-.copyright {
-  background-color: #07102E;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 0.9rem;
-  padding: 0 20px;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-
 /* Responsive Footer */
 @media screen and (max-width: 768px) {
   .footer-container {
@@ -335,8 +318,6 @@ body {
   height: 22px;
   transition: transform 0.2s ease;
 }
-
-
 
 /* Copyright */
 .copyright {
@@ -390,6 +371,4 @@ body {
     flex-direction: column;
     align-items: center;
   }
-
-  
 }
