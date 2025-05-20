@@ -30,8 +30,8 @@
         Aplikasi Pengaduan Masyarakat adalah platform yang memudahkan warga menyampaikan keluhan, saran, dan aspirasi kepada pihak berwenang secara cepat dan efisien. Masalah seputar pelayanan publik, infrastruktur, keamanan, hingga isu sosial dapat dilaporkan langsung melalui aplikasi ini.
       </div>
       <div class="button-container">
-        <div class="button login">Login</div>
-        <div class="button register">Register</div>
+        <a href="{{ route('login') }}" class="button login" style="text-decoration: none;">Login</a>
+        <a href="{{ route('register') }}" class="button register" style="text-decoration: none;">Register</a>
       </div>
     </div>
   </section>
