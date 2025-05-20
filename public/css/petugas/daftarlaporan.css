@@ -1,0 +1,94 @@
+/* Reset dasar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f8f8;
+  color: #111;
+  overflow-y: scroll;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  border: 1px solid #1c3a75;
+  max-width: 1440px;
+  margin: auto;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #06174B; /* warna sesuai gambar */
+  color: white;
+  width: 175px;
+  height: 100vh; /* full tinggi layar */
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 1px 0 5px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+}
+
+/* Logo */
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding-left: 5px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  color: white;
+  user-select: none;
+}
+
+/* Navigasi Menu */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+/* Link menu */
+.nav-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #00b0ff;
+  color: white;
+}
+
+/* Logout */
+.logout {
+  color: white;
+  padding: 10px 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 20px;
+  user-select: none;
+}
+
