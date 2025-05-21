@@ -24,29 +24,30 @@ class AuthController extends Controller
     }
 
     // Proses login
-    public function login(Request $request)
-    {
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-        ]);
+   public function login(Request $request)
+{
+    $request->validate([
+        'username' => 'required',
+        'password' => 'required',
+    ]);
 
-        if (Auth::guard('masyarakat')->attempt(['username' => $request->username, 'password' => $request->password])) {
-            return redirect()->route('masyarakat.dashboard');
-        }
-
-        if (Auth::guard('petugas')->attempt(['username' => $request->username, 'password' => $request->password])) {
-            $petugas = Auth::guard('petugas')->user();
-
-            if ($petugas->level == 'admin') {
-                return redirect()->route('admin.dashboard');
-            } elseif ($petugas->level == 'petugas') {
-                return redirect()->route('petugas.dashboard');
-            }
-        }
-
-        return back()->withErrors(['username' => 'Username atau password salah']);
+    if (Auth::guard('masyarakat')->attempt(['username' => $request->username, 'password' => $request->password])) {
+        return redirect('/dashUser'); // diarahkan ke halaman user
     }
+
+    if (Auth::guard('petugas')->attempt(['username' => $request->username, 'password' => $request->password])) {
+        $petugas = Auth::guard('petugas')->user();
+
+        if ($petugas->level == 'admin') {
+            return redirect()->route('admin.dashboard');
+        } elseif ($petugas->level == 'petugas') {
+            return redirect()->route('petugas.dashpetugas');
+        }
+    }
+
+    return back()->withErrors(['username' => 'Username atau password salah'])->withInput();
+}
+
 
     // Proses registrasi
     public function register(Request $request)
