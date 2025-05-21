@@ -16,9 +16,6 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\LogTestController;
 
-Route::get('/masyarakat/dashboard', [PengaduanController::class, 'dashboard'])
-    ->name('masyarakat.dashboard')
-    ->middleware('auth:masyarakat');
 
 // Halaman utama
 Route::get('/', function () {
@@ -65,14 +62,6 @@ Route::get('/blog6', function () {
 });
 
 
-
-Route::get('/dashUser', function () {
-    return view('user.dashUser');
-});
-Route::get('/daftarUser', function () {
-    return view('user.daftarUser');
-});
-
 // ========================
 // AUTH (Login, Register, Logout)
 // ========================
@@ -87,8 +76,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // MASYARAKAT
 // ========================
 Route::middleware('auth:masyarakat')->group(function () {
-
-    Route::get('/masyarakat/dashboard', [PengaduanController::class, 'dashboard'])->name('masyarakat.dashboard');
+   
+    Route::get('/dashUser', function () {
+    return redirect()->route('user.dashboard');
+    })->middleware('auth:masyarakat')->name('user.dashboard');
 
     // Pengaduan
     Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan.index');
@@ -111,12 +102,12 @@ Route::middleware('auth:petugas')->group(function () {
 
     // Dashboard Petugas
     Route::get('/petugas/dashboard', function () {
-        return view('petugas.dashboard');
-    })->name('petugas.dashboard');
+        return view('petugas.dashpetugas');
+    })->name('petugas.dashpetugas');
 
     Route::get('petugas/daftarlaporan', function () {
     return view('petugas.daftarlaporan');
-});
+})->name('petugas.daftarlaporan');
 
     // Dashboard Admin (pakai controller supaya $petugas bisa dikirim)
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -206,3 +197,15 @@ Route::get('/ml/status', function () {
 });
 
 Route::get('/cek-ml', [App\Http\Controllers\MLController::class, 'cekStatus']);
+
+
+
+Route::get('/dashUser', function () {
+    return view('user.dashUser');
+});
+Route::get('/daftarUser', function () {
+    return view('user.daftarUser');
+});
+
+
+
