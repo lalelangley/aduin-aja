@@ -16,9 +16,6 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\LogTestController;
 
-Route::get('/masyarakat/dashboard', [PengaduanController::class, 'dashboard'])
-    ->name('masyarakat.dashboard')
-    ->middleware('auth:masyarakat');
 
 // Halaman utama
 Route::get('/', function () {
@@ -65,14 +62,6 @@ Route::get('/blog6', function () {
 });
 
 
-
-Route::get('/dashUser', function () {
-    return view('user.dashUser');
-});
-Route::get('/daftarUser', function () {
-    return view('user.daftarUser');
-});
-
 // ========================
 // AUTH (Login, Register, Logout)
 // ========================
@@ -87,8 +76,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // MASYARAKAT
 // ========================
 Route::middleware('auth:masyarakat')->group(function () {
-
-    Route::get('/masyarakat/dashboard', [PengaduanController::class, 'dashboard'])->name('masyarakat.dashboard');
+   
+    Route::get('/dashUser', function () {
+    return redirect()->route('user.dashboard');
+    })->middleware('auth:masyarakat')->name('user.dashboard');
 
     // Pengaduan
     Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan.index');
@@ -206,3 +197,11 @@ Route::get('/ml/status', function () {
 });
 
 Route::get('/cek-ml', [App\Http\Controllers\MLController::class, 'cekStatus']);
+
+Route::get('/dashUser', function () {
+    return view('user.dashUser');
+});
+Route::get('/daftarUser', function () {
+    return view('user.daftarUser');
+});
+
