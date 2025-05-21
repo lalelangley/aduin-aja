@@ -32,7 +32,7 @@ class AuthController extends Controller
     ]);
 
     if (Auth::guard('masyarakat')->attempt(['username' => $request->username, 'password' => $request->password])) {
-        return redirect('/dashUser'); // diarahkan ke halaman user
+        return redirect('masyarakat/dashboard'); // diarahkan ke halaman user
     }
 
     if (Auth::guard('petugas')->attempt(['username' => $request->username, 'password' => $request->password])) {
