@@ -13,8 +13,9 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\LikePengaduanController;
 use App\Http\Controllers\KomentarPengaduanController;
 use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\LogTestController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\LogTestController;
+
 
 
 // Halaman utama
@@ -61,6 +62,14 @@ Route::get('/blog6', function () {
     return view('blog6');
 });
 
+
+
+Route::get('/dashUser', function () {
+    return view('user.dashUser');
+});
+Route::get('/daftarUser', function () {
+    return view('user.daftarUser');
+});
 
 // ========================
 // AUTH (Login, Register, Logout)
