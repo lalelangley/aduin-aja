@@ -64,6 +64,15 @@ Route::get('/blog6', function () {
     return view('blog6');
 });
 
+
+
+Route::get('/dashUser', function () {
+    return view('user.dashUser');
+});
+Route::get('/daftarUser', function () {
+    return view('user.daftarUser');
+});
+
 // ========================
 // AUTH (Login, Register, Logout)
 // ========================
@@ -104,6 +113,10 @@ Route::middleware('auth:petugas')->group(function () {
     Route::get('/petugas/dashboard', function () {
         return view('petugas.dashboard');
     })->name('petugas.dashboard');
+
+    Route::get('petugas/daftarlaporan', function () {
+    return view('petugas.daftarlaporan');
+});
 
     // Dashboard Admin (pakai controller supaya $petugas bisa dikirim)
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
