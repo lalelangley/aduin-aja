@@ -2,39 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@yield('title', 'Dashboard')</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
+    /* Reset & base */
+    *, *::before, *::after {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Sidebar style - fixed, desktop only */
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* Sidebar */
     #sidebar {
       width: 200px;
-      height: 100vh;
+      min-height: 100vh;
       background-color: #06174B;
       color: white;
-      position: fixed;
-      top: 0;
-      left: 0;
       padding: 20px 15px;
-      overflow-y: auto;
-      z-index: 1030;
+      position: relative;
+      flex-shrink: 0;
     }
 
     #sidebar .logo {
-      width: 170px;
+      width: 100%;
+      max-width: 170px;
       margin-bottom: 25px;
     }
 
-    #sidebar .menu-item {
+    .menu-item {
       display: flex;
       align-items: center;
       padding: 12px 10px;
@@ -45,43 +57,65 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
-    #sidebar .menu-item:hover,
-    #sidebar .menu-item.active {
+    .menu-item:hover,
+    .menu-item.active {
       background-color: #00CCFF;
       color: #000;
     }
 
-    #sidebar .menu-item img.icon {
+    .menu-item img.icon {
       width: 20px;
       margin-right: 12px;
       filter: brightness(0) invert(1);
       transition: filter 0.3s;
     }
 
-    #sidebar .menu-item:hover img.icon,
-    #sidebar .menu-item.active img.icon {
+    .menu-item:hover img.icon,
+    .menu-item.active img.icon {
       filter: none;
     }
 
-    #sidebar .menu-item.keluar {
+    .menu-item.keluar {
       margin-top: 50px;
       width: 150px;
       justify-content: flex-start;
-      padding-left: 10px;
     }
 
-    /* Konten utama dengan margin kiri sesuai sidebar */
+    /* Content */
     #content {
-      margin-left: 200px;
+      flex-grow: 1;
       padding: 20px;
+      background-color: #fff;
       min-height: 100vh;
-      transition: margin-left 0.3s ease;
+
     }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      #sidebar {
+        width: 100%;
+        height: auto;
+      }
+
+      #content {
+        margin-left: 0;
+        padding-top: 20px;
+      }
+
+      transition: margin-left 0.3s ease;
+      
+
+    }
+    
   </style>
 </head>
 <body>
 
-  <nav id="sidebar" aria-label="Sidebar Navigation">
+  <nav id="sidebar">
     <img class="logo" src="{{ asset('image/logo1.png') }}" alt="Logo" />
     <div class="menu">
       <div class="menu-item">
@@ -111,7 +145,7 @@
     </div>
   </nav>
 
-  <main id="content" tabindex="-1">
+  <main id="content">
     @yield('content')
   </main>
 
