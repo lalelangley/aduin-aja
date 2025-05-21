@@ -1,138 +1,68 @@
-@extends('layouts.app')
-
-@section('title', 'Dashboard Masyarakat')
-
-@section('content')
-<div class="container mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-    <div class="flex justify-between items-center">
-        <h1 class="text-3xl font-bold text-gray-800">Dashboard Masyarakat</h1>
-
-        <!-- Tombol Profile -->
-        <a href="{{ route('profile.index') }}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition">
-            👤 Profile
-        </a>
-    </div>
-
-    <p class="mt-2 text-gray-600">
-        Selamat datang, <span class="font-semibold">{{ Auth::guard('masyarakat')->user()->nama ?? 'Pengguna' }}</span>!
-    </p>
-
-    <div class="mt-5 flex space-x-3">
-        <a href="{{ route('pengaduan.index') }}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-            📋 Lihat Pengaduan
-        </a>
-        <a href="{{ route('pengaduan.create') }}" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">
-            ✏️ Buat Pengaduan Baru
-        </a>
-
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">
-                🔴 Logout
-            </button>
-        </form>
-    </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard User</title>
+  <link rel="stylesheet" href="{{ asset('css/user/dashUser.css') }}">
+</head>
+<body>
+  <div class="container">
+<div class="navbar">
+  <div class="search-box">
+    <input type="text" placeholder="Cari laporan..." class="search-input">
+  </div>
+  <img class="profile-pic" src="{{ asset('image/profile.png') }}" />
 </div>
 
-<div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-    <div class="p-4 bg-blue-100 rounded shadow">
-        <h2 class="text-xl font-semibold text-blue-800">Total Pengaduan</h2>
-        <p class="text-2xl font-bold text-blue-900">{{ $total }}</p>
+    <!-- Welcome Section -->
+    <div class="welcome-box">
+      
     </div>
-    <div class="p-4 bg-yellow-100 rounded shadow">
-        <h2 class="text-xl font-semibold text-yellow-800">Pending</h2>
-        <p class="text-2xl font-bold text-yellow-900">{{ $pending }}</p>
+    <img class="welcome-img" src="{{ asset('image/dashUser.png') }}" alt="welcome" />
+    <div class="welcome-text">
+      <span class="title">Selamat Datang</span>
+      <span class="title">, {{ Auth::user()->name ?? 'User' }} !</span>
     </div>
-    <div class="p-4 bg-orange-100 rounded shadow">
-        <h2 class="text-xl font-semibold text-orange-800">Diproses</h2>
-        <p class="text-2xl font-bold text-orange-900">{{ $proses }}</p>
+    <div class="welcome-desc">
+      Terima kasih telah menjadi bagian dari Public Voice. Peran Anda sangat penting dalam memastikan setiap pengaduan masyarakat dikelola dengan cepat, transparan, dan tepat sasaran. Gunakan panel admin ini untuk memantau, menanggapi, dan menindaklanjuti setiap laporan yang masuk.
     </div>
-    <div class="p-4 bg-green-100 rounded shadow">
-        <h2 class="text-xl font-semibold text-green-800">Selesai</h2>
-        <p class="text-2xl font-bold text-green-900">{{ $selesai }}</p>
+
+<div class="sidebar">
+  <img class="logo" src="{{ asset('image/logo1.png') }}" />
+
+<!-- Sidebar -->
+    <div class="sidebar">
+      <img class="logo" src="{{ asset('image/logo1.png') }}" />
+
+      <div class="menu">
+        <div class="menu-item">
+          <img src="{{ asset('image/beranda.png') }}" class="icon">
+          <span>Beranda</span>
+        </div>
+        <div class="menu-item daftar-laporan">
+          <img src="{{ asset('image/daftar.png') }}" class="icon">
+          <span>Daftar Laporan</span>
+        </div>
+        <div class="menu-item tambah-laporan">
+          <img src="{{ asset('image/tambah.png') }}" class="icon">
+          <span>Tambah Laporan</span>
+        </div>
+        <div class="menu-item">
+          <img src="{{ asset('image/informasi.png') }}" class="icon">
+          <span>Informasi</span>
+        </div>
+        <div class="menu-item">
+          <img src="{{ asset('image/pengaturan.png') }}" class="icon">
+          <span>Pengaturan</span>
+        </div>
+      </div>
+
+      <div class="menu-item keluar">
+        <img src="{{ asset('image/keluar.png') }}" class="icon">
+        <span>Keluar</span>
+      </div>
     </div>
-</div>
-
-<!-- Grafik Pengaduan Status -->
-<div class="mt-10 bg-white p-6 rounded shadow">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Grafik Pengaduan</h2>
-    <canvas id="pengaduanChart" height="120"></canvas>
-</div>
-
-<!-- Grafik Pengaduan Berdasarkan Divisi -->
-<div class="mt-10 bg-white p-6 rounded shadow">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Grafik Pengaduan Berdasarkan Divisi</h2>
-    <canvas id="divisiChart" height="120"></canvas>
-</div>
-
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    // Grafik Status Pengaduan
-    const pengaduanCtx = document.getElementById('pengaduanChart').getContext('2d');
-    new Chart(pengaduanCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Pending', 'Proses', 'Selesai'],
-            datasets: [{
-                label: 'Jumlah Pengaduan',
-                data: [{{ $pending }}, {{ $proses }}, {{ $selesai }}],
-                backgroundColor: [
-                    'rgba(253, 224, 71, 0.7)',
-                    'rgba(251, 146, 60, 0.7)',
-                    'rgba(34, 197, 94, 0.7)'
-                ],
-                borderColor: [
-                    'rgba(202, 138, 4, 1)',
-                    'rgba(194, 65, 12, 1)',
-                    'rgba(22, 163, 74, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        precision: 0
-                    }
-                }
-            }
-        }
-    });
-
-    // Grafik Pengaduan Berdasarkan Divisi
-    const divisiCtx = document.getElementById('divisiChart').getContext('2d');
-    new Chart(divisiCtx, {
-        type: 'bar',
-        data: {
-            labels: @json($labels),
-            datasets: [{
-                label: 'Jumlah Pengaduan',
-                data: @json($values),
-                backgroundColor: ['#FF6384', '#FFCE56', '#36A2EB'],
-                borderColor: '#ccc',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Jumlah Pengaduan Hasil Klasifikasi ML per Divisi'
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: { precision: 0 }
-                }
-            }
-        }
-    });
-</script>
-</script>
-@endsection
+  </div>
+</body>
+</html>
