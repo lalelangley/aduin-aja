@@ -61,7 +61,7 @@ Route::get('/blog6', function () {
     return view('blog6');
 });
 
-<<<<<<<<< Temporary merge branch 1
+
 // ========================
 // AUTH (Login, Register, Logout)
 // ========================
@@ -197,11 +197,10 @@ Route::get('/ml/status', function () {
 });
 
 Route::get('/cek-ml', [App\Http\Controllers\MLController::class, 'cekStatus']);
-=========
+
 Route::get('/dashUser', function () {
     return view('user.dashUser');
 });
 Route::get('/daftarUser', function () {
     return view('user.daftarUser');
 });
->>>>>>>>> Temporary merge branch 2
