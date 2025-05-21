@@ -195,3 +195,18 @@ Route::get('/ml/status', function () {
 });
 
 Route::get('/cek-ml', [App\Http\Controllers\MLController::class, 'cekStatus']);
+
+
+
+Route::get('/dashUser', function () {
+    return view('user.dashUser');
+});
+
+Route::get('/daftarUser', function () {
+    return view('user.daftarUser');
+});
+
+Route::get('/tambahUser', function () {
+    return view('user.tambahUser');
+});
+
