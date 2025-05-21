@@ -5,7 +5,7 @@ body {
   background-color: #f5f7fa;
 }
 
-/* Sidebar fixed */
+/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -21,13 +21,11 @@ body {
   z-index: 200;
 }
 
-/* Logo Sidebar */
 .logo {
   width: 170px;
   margin-bottom: 25px;
 }
 
-/* Menu Sidebar */
 .menu {
   flex-grow: 1;
 }
@@ -39,17 +37,16 @@ body {
   cursor: pointer;
   border-radius: 8px;
   transition: background-color 0.3s, color 0.3s;
-  color: white; /* default warna teks */
+  color: white;
 }
 
 .menu-item img.icon {
   width: 20px;
   margin-right: 12px;
-  filter: brightness(0) invert(1); /* default: putih */
+  filter: brightness(0) invert(1);
   transition: filter 0.3s;
 }
 
-/* Ukuran khusus untuk ikon daftar */
 .menu-item.daftar-laporan img.icon {
   width: 20px;
   height: 20px;
@@ -59,19 +56,17 @@ body {
   font-size: 15px;
 }
 
-/* Efek saat hover / active */
 .menu-item:hover,
 .menu-item.active {
   background-color: #00CCFF;
-  color: #000000; /* teks jadi biru */
+  color: #000000;
 }
 
 .menu-item:hover img.icon,
 .menu-item.active img.icon {
-  filter: none; /* icon pakai warna asli (biru misalnya) */
+  filter: none;
 }
 
-/* Menu keluar */
 .menu-item.keluar {
   margin-top: 50px;
   width: 150px;
@@ -94,11 +89,11 @@ body {
   filter: none;
 }
 
-/* Navbar fixed */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
-  left: 205px; /* geser sesuai lebar sidebar */
+  left: 205px;
   right: 0;
   height: 60px;
   background-color: #ffffff;
@@ -109,7 +104,6 @@ body {
   z-index: 300;
 }
 
-/* Search box */
 .search-box {
   flex: 1;
   max-width: 300px;
@@ -123,7 +117,6 @@ body {
   font-size: 14px;
 }
 
-/* Foto Profil */
 .profile-pic {
   position: absolute;
   top: 10px;
@@ -131,4 +124,76 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+/* Container */
+.container {
+  margin-left: 205px;
+  padding: 80px 20px 20px;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #06174B;
+}
+
+/* Container agar bisa diatur posisinya */
+.accordion-container {
+  position: absolute;
+  top: 30px; /* geser ke atas */
+  left: 30px; /* geser ke kiri */
+  width: 300px;
+}
+
+/* Accordion box */
+.accordion-item {
+  background: #fff;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header */
+.accordion-header {
+  background: #06174B;
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.accordion-header:hover {
+  background: #00CCFF;
+  color: #000;
+}
+
+/* Isi konten */
+.accordion-content {
+  display: none;
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+.accordion-content ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.accordion-content ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.accordion-content p {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
 }
