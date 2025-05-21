@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
+
 class GoogleAuthController extends Controller
 {
     // Redirect ke Google
