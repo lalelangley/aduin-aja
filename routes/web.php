@@ -102,12 +102,12 @@ Route::middleware('auth:petugas')->group(function () {
 
     // Dashboard Petugas
     Route::get('/petugas/dashboard', function () {
-        return view('petugas.dashboard');
-    })->name('petugas.dashboard');
+        return view('petugas.dashpetugas');
+    })->name('petugas.dashpetugas');
 
     Route::get('petugas/daftarlaporan', function () {
     return view('petugas.daftarlaporan');
-});
+})->name('petugas.daftarlaporan');
 
     // Dashboard Admin (pakai controller supaya $petugas bisa dikirim)
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -198,10 +198,14 @@ Route::get('/ml/status', function () {
 
 Route::get('/cek-ml', [App\Http\Controllers\MLController::class, 'cekStatus']);
 
+
+
 Route::get('/dashUser', function () {
     return view('user.dashUser');
 });
 Route::get('/daftarUser', function () {
     return view('user.daftarUser');
 });
+
+
 
