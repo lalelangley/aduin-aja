@@ -209,5 +209,14 @@ class PengaduanController extends Controller
     ));
 }
 
+public function dashboardPetugas()
+{
+    $totalLaporan = Pengaduan::count();
+    $belumDiproses = Pengaduan::where('status', '0')->count();
+    $diproses = Pengaduan::where('status', 'proses')->count();
+    $selesai = Pengaduan::where('status', 'selesai')->count();
+
+    return view('petugas.dashpetugas', compact('totalLaporan', 'belumDiproses', 'diproses', 'selesai'));
+}
 
 }

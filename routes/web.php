@@ -12,6 +12,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\LikePengaduanController;
 use App\Http\Controllers\KomentarPengaduanController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\LogTestController;
 
@@ -102,10 +103,20 @@ Route::middleware('auth:masyarakat')->group(function () {
 // ========================
 Route::middleware('auth:petugas')->group(function () {
 
+
     // Dashboard Petugas
     Route::get('/petugas/dashboard', function () {
         return view('petugas.dashboard');
     })->name('petugas.dashboard');
+
+    Route::middleware('auth:petugas')->group(function () {
+    Route::get('/petugas/dashboard', [PengaduanController::class, 'dashboardPetugas'])->name('petugas.dashpetugas');
+});
+
+    Route::get('petugas/daftarlaporan', function () {
+    return view('petugas.daftarlaporan');
+})->name('petugas.daftarlaporan');
+
 
     // Dashboard Admin (pakai controller supaya $petugas bisa dikirim)
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');

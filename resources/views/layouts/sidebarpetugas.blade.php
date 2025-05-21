@@ -87,6 +87,7 @@
       padding: 20px;
       background-color: #fff;
       min-height: 100vh;
+
     }
 
     /* Responsive */
@@ -104,7 +105,12 @@
         margin-left: 0;
         padding-top: 20px;
       }
+
+      transition: margin-left 0.3s ease;
+      
+
     }
+    
   </style>
 </head>
 <body>
