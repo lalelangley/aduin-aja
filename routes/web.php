@@ -44,6 +44,12 @@ Route::get('/blog6', function () {
 Route::get('/dashUser', function () {
     return view('user.dashUser');
 });
+
 Route::get('/daftarUser', function () {
     return view('user.daftarUser');
 });
+
+Route::get('/tambahUser', function () {
+    return view('user.tambahUser');
+});
+
