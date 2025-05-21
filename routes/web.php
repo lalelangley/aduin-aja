@@ -13,6 +13,7 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\LikePengaduanController;
 use App\Http\Controllers\KomentarPengaduanController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\LogTestController;
 
 Route::get('/masyarakat/dashboard', [PengaduanController::class, 'dashboard'])
