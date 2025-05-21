@@ -108,7 +108,7 @@
 
       transition: margin-left 0.3s ease;
       
-
+     
     }
     
   </style>
@@ -128,7 +128,7 @@
       </div>
       <div class="menu-item tambah-laporan">
         <img src="{{ asset('image/tambah.png') }}" class="icon" alt="Tambah Laporan Icon" />
-        <span>Tambah Laporan</span>
+        <span>Tambah Tanggapan</span>
       </div>
       <div class="menu-item">
         <img src="{{ asset('image/informasi.png') }}" class="icon" alt="Informasi Icon" />
