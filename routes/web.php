@@ -17,6 +17,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\LogTestController;
 
 
+
 // Halaman utama
 Route::get('/', function () {
     return view('welcome');
@@ -59,6 +60,17 @@ Route::get('/blog5', function () {
 });
 Route::get('/blog6', function () {
     return view('blog6');
+});
+
+
+
+
+
+Route::get('/dashUser', function () {
+    return view('user.dashUser');
+});
+Route::get('/daftarUser', function () {
+    return view('user.daftarUser');
 });
 
 
@@ -197,6 +209,8 @@ Route::get('/ml/status', function () {
 });
 
 Route::get('/cek-ml', [App\Http\Controllers\MLController::class, 'cekStatus']);
+
+
 
 
 
