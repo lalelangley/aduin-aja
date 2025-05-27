@@ -211,20 +211,18 @@ Route::get('/ml/status', function () {
 
 Route::get('/cek-ml', [App\Http\Controllers\MLController::class, 'cekStatus']);
 
-
-
-Route::get('/dashUser', function () {
-    return view('user.dashUser');
+Route::get('/daftarMasyarakat', function () {
+    return view('masyarakat.daftarMasyarakat');
 });
 
-Route::get('/daftarUser', function () {
-    return view('user.daftarUser');
+Route::get('/tambahMasyarakat', function () {
+    return view('masyarakat.tambahMasyarakat');
 });
 
-Route::get('/tambahUser', function () {
-    return view('user.tambahUser');
+Route::get('/informasiMasyarakat', function () {
+    return view('masyarakat.informasiMasyarakat');
 });
 
-Route::get('/informasiUser', function () {
-    return view('user.informasiUser');
+Route::get('/pengaturanMasyarakat', function () {
+    return view('masyarakat.pengaturanMasyarakat');
 });
